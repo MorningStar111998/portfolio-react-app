@@ -1,0 +1,78 @@
+.projects{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Row 1  */
+.projects .row-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+.projects .row-1 p{
+    max-width: 500px;
+}
+
+.projects .row-1 .column-2{
+    text-align: center;
+}
+
+/* 1. Set up a 3D context on the container */
+.phone-container {
+  /* This is crucial for 3D effect */
+  perspective: 1000px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2. Define the element's shape and appearance */
+.floating-phone {
+    background: url("./../../assets/background-phone.jpg");
+    background-size: cover;
+  width: 300px;
+  height: 500px;
+  background-color: #222; /* Dark phone body */
+  border: 10px solid #000; /* Screen border */
+  border-radius: 20px; /* Rounded corners */
+  position: relative;
+  box-shadow: 0px 0px 10px white;
+  /* Smooth transformation on hover */
+  transition: transform 0.8s ease-in-out; 
+
+  /* 4. Apply 3D Transformation - Initial State (Slight Tilt) */
+  /* Move it back a bit in Z space for a better view */
+  transform: rotate(10deg) rotateX(15deg) rotateY(-25deg) translateZ(0); 
+}
+
+/* 3. Create the 3D depth using box-shadow */
+
+
+/* Optional: Add hover for interaction */
+.floating-phone:hover {
+  transform: rotateX(0deg) rotateY(0deg) translateZ(50px);
+}
+
+.projects-container .grid-container{
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.projects-container .grid-container div{
+    /* width: 200px;
+    height: 200px; */
+    background-color: white;
+    border: solid 1px black;
+    box-shadow: 0px 0px 10px pink;
+    color: #000;
+    padding: 1.6rem;
+    text-align: center;
+}

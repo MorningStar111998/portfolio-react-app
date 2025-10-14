@@ -1,0 +1,3 @@
+Add animation (with Framer Motion, super simple now that you have logic), or
+
+Make the Accordion accept data as props, so you can reuse it for other sections like FAQ or Services.
