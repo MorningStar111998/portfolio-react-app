@@ -4,9 +4,23 @@
   align-items: center;
   padding: 1rem 2rem;
   color: white;
-  height: 80px;
+  height: 90px;
   z-index: 100;
+  position: relative;
+  transition: all 0.2s ease;
+  transform: translateY(-10px);
 }
+
+.header.sticky {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transform: translateY(0);
+
+}
+
+
 
 
 .brand-logo {
@@ -14,13 +28,12 @@
   font-weight: bold;
   letter-spacing: 1px;
   color: #1bdfed; /* light blue */
-
 }
 
-.brand-logo span:nth-child(1){
+.brand-logo span:nth-child(1) {
   color: white;
 }
-.brand-logo span:nth-child(2){
+.brand-logo span:nth-child(2) {
   color: rgb(228, 4, 228);
 }
 
@@ -41,27 +54,34 @@
   font-size: 1.1rem;
 }
 
-.header-nav-item::after{
-  content:"0" counter(menu-item) ;
+.header.sticky nav a{
+  color: #66d9ed;
+}
+
+
+
+.header-nav-item::after {
+  content: "0" counter(menu-item);
   font-size: 0.6rem;
   position: absolute;
   top: -0.5rem;
   right: 0;
-
 }
 
-.header-nav a:hover, .header-nav a:hover header-nav-item::after {
+.header.sticky .header-nav-item::after{
+  color: #66d9ed;
+}
+
+.header-nav a:hover,
+.header-nav a:hover header-nav-item::after {
   color: #1bdfed; /* light blue */
   font-weight: 900;
 }
 
-.header-nav-item{
+.header-nav-item {
   counter-increment: menu-item;
-  position:relative
+  position: relative;
 }
-
-
-
 
 @media (max-width: 600px) {
   .header-nav ul {

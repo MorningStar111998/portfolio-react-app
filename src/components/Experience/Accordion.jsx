@@ -44,15 +44,17 @@ function Accordion() {
   return (
     <div className="accordion">
       {experiences.map((exp, index) => (
-        <div key={index} className={exp.name + " accordion-item"}>
+        <div
+          key={index}
+          className={`accordion-item ${openIndex === index ? "open" : ""}`}
+        >
           <div
             className="accordion-header"
             onClick={() => {
               toggleAccordion(index);
             }}
           >
-            <img src={exp.logo} alt={exp.name} />
-              <h3>{exp.role} </h3>
+            <h3>{exp.role} </h3>
             <div>
               <p>{exp.period} </p>
 
@@ -62,13 +64,16 @@ function Accordion() {
                 aria-controls={"accordion-item-" + index}
                 className="accordion-button"
               >
-                &#x207A;
+                
               </button>
             </div>
           </div>
-          {openIndex === index && (
-            <div className="accordion-description">{exp.description} </div>
-          )}
+
+          <div
+            className="accordion-description"
+          >
+            {exp.description} <img src={exp.logo} alt={exp.name} className={exp.name} />
+          </div>
         </div>
       ))}
     </div>

@@ -3,13 +3,16 @@
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-      background-color: rgba(0, 0, 0, 0.822);
+      background-color: #1a191d;
 
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    --neon-color: #00e5ff; /* Cyan */
+  --border-size: 4px;
+  --animation-speed: 4s;
 }
 
 * {

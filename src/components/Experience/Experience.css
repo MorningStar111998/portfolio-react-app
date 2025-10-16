@@ -14,6 +14,7 @@
 .profile-card {
   height: 600px;
   width: 400px;
+  min-width: 400px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -118,13 +119,18 @@ a.contact-btn:hover {
 }
 
 .accordion-header {
-  background-color: #740cdc;
+  background-color: #40037d;
   display: flex;
   align-items: center;
   flex-direction: row;
   border-radius: 5px;
   padding: 0.8rem 1.4rem;
   gap: 0.3rem;
+  transition: background-color 0.2s ease;
+}
+
+.open .accordion-header {
+  background-color: #740cdc;
 }
 .accordion-header img {
   width: 40px;
@@ -136,13 +142,14 @@ a.contact-btn:hover {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.3rem;
+  gap: 1rem;
   margin-left: auto;
 }
 
 .accordion-button {
-    background: none;
-    border: solid 1px white;
+  background: none;
+  border: none;
+  position: relative;
 
   width: 40px;
   height: 40px;
@@ -152,13 +159,62 @@ a.contact-btn:hover {
   display: block;
 }
 
-.accordion-button:hover{
-    border: solid 1px #66d9ed;
-    color: #66d9ed;
+.accordion-button::after{
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.open .accordion-button::after{
+  content: "-";
+}
+
+.accordion-button:hover {
+  border: solid 0.5px #66d9ed;
+  color: #66d9ed;
+  cursor: pointer;
+}
+.accordion-button:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 2px grey;
+  color: #66d9ed;
 }
 .accordion-description {
   background-color: #241d41;
   border-radius: 5px;
-  padding: 0.8rem 1.4rem;
-  transition: all 0.2s ease ;
+  padding: 0;
+  transition: all 0.2s ease;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: -1rem;
+
+  /* To align image and text in description */
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.open .accordion-description {
+  padding: 0.8rem 1.4rem;
+  max-height: 200px;
+  margin-top: 0;
+}
+
+.accordion-description img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+}
+
+/* Companies Logos  */
+.accordion-description img.webcinq,
+.accordion-description img.outlier {
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* Neon Animation  */

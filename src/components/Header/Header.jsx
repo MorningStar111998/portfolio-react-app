@@ -1,6 +1,27 @@
 import "./Header.css";
+import { useEffect } from "react";
 
 function Header() {
+
+  useEffect(() => {
+
+    const header = document.querySelector("header");
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      
+      if (scrollY > window.innerHeight * 0.5) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []
+
+  );
+
   return (
     <header className="header">
       <div className="brand-logo">
