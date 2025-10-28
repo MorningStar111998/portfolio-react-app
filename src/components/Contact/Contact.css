@@ -1,6 +1,150 @@
 .contact{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0e0e0e;
+}
+
+
+/* Profile Card  */
+.profile-card {
+  height: 600px;
+  width: 400px;
+  min-width: 400px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  border-radius: 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.345), rgba(0, 0, 0, 0.607)),
+    url("./../../assets/profile-picture.jpg");
+  background-size: cover;
+  border: solid white 3px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+  animation: glowing 2s  infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes glowing {
+  0%, 100%{
+    box-shadow: 0px 0px 0px #1bd0dd;
+  }
+  50%{
+    box-shadow: 0px 0px 40px #1bd0dd;
+  }
+}
+
+
+.profile-name {
+  font-size: 1.8rem;
+}
+
+.profile-contact {
+  backdrop-filter: blur(80px);
+  margin-bottom: 1rem;
+  width: 90%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.8rem;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 1.4rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+}
+
+.profile-contact .left {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-contact .profile-pic-mini {
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  max-width: 50%;
+  border-radius: 50%;
+  border: solid 1px solid;
+  margin: 0 0.5rem;
+  background: url("../../assets/profile-picture-mini.jpg");
+  background-size: cover;
+}
+
+.profile-status {
+  text-align: start;
+}
+
+a.contact-btn {
+  display: block;
+  backdrop-filter: blur(100px);
+  text-decoration: none;
+  padding: 0.8rem;
+
+  border-radius: 8px;
+  border: solid 1px white;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+a.contact-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 5px white;
+  transform: translateY(-2px);
+}
+
+
+
+/* Contact  */
+.contact-column-2{
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: start;
+    gap: 4rem;
+}
+.contact h1{
+    max-width: 600px;
+}
+
+a.contact-email{
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: linear-gradient( rgba(0, 0, 0, 0) 5%, #1bd0dd);
+    background-size: 100% 20%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: white;
+    transition: background 0.1s ease;
+    padding: 0.2rem;
+}
+
+a.contact-email:hover{
+    background-size: 100% 100%;
+}
+
+.socials-container{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
     align-items: center;
+    gap: 1rem;
+}
+
+
+.contact .social-icon{
+    width: 42px;
 }

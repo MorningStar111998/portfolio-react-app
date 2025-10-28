@@ -5,9 +5,10 @@ function Experience() {
   return (
     <section className="experience">
       <h2>Professional Experience</h2>
-      <div className="flex-container-row">        
+      <div className="flex-container-row">
+        
         <div className="professional-experience">
-          <Accordion/>
+          <Accordion />
         </div>
       </div>
     </section>
