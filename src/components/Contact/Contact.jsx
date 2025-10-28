@@ -3,15 +3,25 @@ import "./Contact.css";
 import githubIcon from "./../../assets/socials-icons/github.png";
 import instagramIcon from "./../../assets/socials-icons/instagram.png";
 import linkedinIcon from "./../../assets/socials-icons/linkedin.png";
-import messengerIcon from "./../../assets/socials-icons/messenger.png";
 import whatsappIcon from "./../../assets/socials-icons/whatsapp.png";
 
 const socials = [
-  { name: "whatsapp", link: "https://wa.me/212612345678", icon: whatsappIcon },
-  { name: "github", link: "#", icon: githubIcon },
-  { name: "instagram", link: "#", icon: instagramIcon },
-  { name: "linkedin", link: "#", icon: linkedinIcon },
-  { name: "messenger", link: "#", icon: messengerIcon },
+  { name: "whatsapp", link: "https://wa.me/212721677298", icon: whatsappIcon },
+  {
+    name: "github",
+    link: "https://github.com/MorningStar111998",
+    icon: githubIcon,
+  },
+  {
+    name: "instagram",
+    link: "https://www.instagram.com/serge_regis",
+    icon: instagramIcon,
+  },
+  {
+    name: "linkedin",
+    link: "https://www.linkedin.com/in/regis-tougouri/",
+    icon: linkedinIcon,
+  },
 ];
 
 function Contact() {

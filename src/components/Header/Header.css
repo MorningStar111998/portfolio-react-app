@@ -20,6 +20,10 @@
 
 }
 
+.header.sticky .brand-logo{
+  opacity: 0;
+}
+
 
 
 
