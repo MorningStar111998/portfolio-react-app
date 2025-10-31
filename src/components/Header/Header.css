@@ -17,15 +17,11 @@
   backdrop-filter: blur(10px);
   z-index: 1000;
   transform: translateY(0);
-
 }
 
-.header.sticky .brand-logo{
+.header.sticky .brand-logo {
   opacity: 0;
 }
-
-
-
 
 .brand-logo {
   font-size: 2.2rem;
@@ -38,7 +34,7 @@
   color: white;
 }
 .brand-logo span:nth-child(2) {
-  color: rgb(228, 4, 228);
+  color: #e404e4;
 }
 
 .header-nav ul {
@@ -58,11 +54,9 @@
   font-size: 1.1rem;
 }
 
-.header.sticky nav a{
+.header.sticky nav a {
   color: #66d9ed;
 }
-
-
 
 .header-nav-item::after {
   content: "0" counter(menu-item);
@@ -72,7 +66,7 @@
   right: 0;
 }
 
-.header.sticky .header-nav-item::after{
+.header.sticky .header-nav-item::after {
   color: #66d9ed;
 }
 
@@ -87,9 +81,64 @@
   position: relative;
 }
 
-@media (max-width: 600px) {
+.dropdown-button {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .brand-logo {
+    font-size: 1.4rem;
+  }
+  .hidden-element {
+    display: none;
+  }
+  .dropdown-button {
+    display: block;
+  }
+
+  .dropdown-button button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.507);
+    backdrop-filter: blur(10px);
+    border: none;
+  }
+  .header {
+    transform: translateY(0);
+    padding-top: 0;
+  }
+
+  .header-nav {
+    display: none;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
+  .nav-open .header-nav {
+    display: block;
+    width: 80vw;
+    padding-top: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 4px;
+    background-color: white;
+    height: 100vh;
+  }
   .header-nav ul {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .header-nav a {
+    font-size: 0.8rem;
+    color: black;
+  }
+
+  .header-nav-item::after {
+    /* display: none; */
+    color: black;
   }
 }

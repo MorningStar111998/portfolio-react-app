@@ -4,6 +4,12 @@ import { useState } from "react";
 import airlodLogo from "./../../assets/company-logos/airlod.png";
 import webcinqLogo from "./../../assets/company-logos/webcinq.png";
 import outlierLogo from "./../../assets/company-logos/outlier-ai.png";
+import afrocodeverseLogo from "./../../assets/company-logos/afrocodeverse.png";
+
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const experiences = [
   {
@@ -12,14 +18,21 @@ const experiences = [
     period: "2023 - 2024",
     logo: airlodLogo,
     description:
-      "C'est ici que j'ai fait mes permiers pas dans le monde professionel",
+      "This is where I had my first real-world professional experience and learned the fundamentals of web development.",
+    skills: ["WordPress", "JavaScript", "EJS", "PHP"],
+    location: "Marrakech, Morocco",
+    companyWebsite: "airlod.com",
   },
   {
     name: "webcinq",
     role: "Full Stack Developer at Webcinq",
     period: "2024 - 2025",
     logo: webcinqLogo,
-    description: "Avec plus de 1é sites WordPress fonctionnels délivrés, c",
+    description:
+      "At Webcinq, I worked on multiple client projects, primarily building WordPress websites. I successfully delivered over 12 fully functional sites, ranging from simple showcases to complex e-commerce platforms.",
+    skills: ["WordPress", "Git", "PHP", "Laravel"],
+    location: "Marrakech, Morocco",
+    companyWebsite: "webcinq.ma",
   },
   {
     name: "outlier",
@@ -27,7 +40,21 @@ const experiences = [
     period: "2024 - Present",
     logo: outlierLogo,
     description:
-      "Avec plus de 12 sites WordPress fonctionnels délivrés, j'ai acquis la maitrise de WordPress, des simples sites vitrines aux sites E-Commerce ",
+      "As a freelancer at Outlier, I contribute to training AI models across various fields including full-stack development, writing, and data annotation.",
+    skills: ["WordPress", "JavaScript", "EJS", "PHP"],
+    location: "San Francisco, USA (Remote)",
+    companyWebsite: "outlier.ai",
+  },
+  {
+    name: "AfroCodeVerse",
+    role: "Freelancer Full Stack Developer",
+    period: "2025 - Present",
+    logo: afrocodeverseLogo,
+    description:
+      "Freelancing under AfroCodeVerse as a self-employed, I develop custom websites and web apps tailored to clients’ needs, focusing on functionality and modern design.",
+    skills: ["React", "Laravel", "PHP", "Python", "WordPress"],
+    location: "Marrakech, Morocco",
+    companyWebsite: "",
   },
 ];
 
@@ -54,25 +81,50 @@ function Accordion() {
               toggleAccordion(index);
             }}
           >
-            <h3>{exp.role} </h3>
+            <h3 className="job-role">{exp.role} </h3>
             <div>
-              <p>{exp.period} </p>
+              <p className="job-period">{exp.period} </p>
 
               <button
                 role="button"
                 aria-expanded={openIndex === index ? "true" : "false"}
                 aria-controls={"accordion-item-" + index}
                 className="accordion-button"
-              >
-                
-              </button>
+              ></button>
             </div>
           </div>
 
-          <div
-            className="accordion-description"
-          >
-            {exp.description} <img src={exp.logo} alt={exp.name} className={exp.name} />
+          <div className="accordion-description">
+            <div>
+              <div className="job-location">
+                <span>
+                  <FontAwesomeIcon className="icons" icon={faLocationDot} />{" "}
+                  {exp.location}
+                </span>
+                {exp.companyWebsite === "" ? (
+                  ""
+                ) : (
+                  <span>
+                    <a href={exp.companyWebsite}>
+                      <FontAwesomeIcon
+                        className="icons"
+                        icon={faArrowUpRightFromSquare}
+                      />{" "}
+                      {exp.companyWebsite}
+                    </a>
+                  </span>
+                )}
+              </div>
+              <p className="job-description">{exp.description}</p>
+              <div className="job-skills-container">
+                {exp.skills.map((skill) => (
+                  <span className="job-skill">{skill}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <img src={exp.logo} alt={exp.name} className={exp.name} />
+            </div>
           </div>
         </div>
       ))}

@@ -3,7 +3,7 @@
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-      background-color: #1a191d;
+      background-color: rgb(26, 25, 29);
 
 
   font-synthesis: none;
@@ -49,7 +49,10 @@ section{
 }
 
 h2{
-    font-size: 6rem;
+  /* The size you had: font-size: 6rem; (Too large for small screens) */
+  
+  /* The fluid solution: */
+  font-size: clamp(2.5rem, 5vw + 1rem, 6rem);
 }
 
 div.hero {
@@ -60,7 +63,28 @@ div.hero {
   align-items: center;
 }
 
+@media (max-width:768px) {
+  section{
+  padding: 2rem ;
+}
+}
 
+
+/* @keyframes appear{
+  from{
+    opacity: O;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+section{
+  animation: appear 1s linear;
+  animation-timeline: view();
+} */
 
 /* Remove after  */
 /* section:last-of-type{

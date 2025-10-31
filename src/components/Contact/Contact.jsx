@@ -26,7 +26,7 @@ const socials = [
 
 function Contact() {
   return (
-    <section className="contact">
+    <section id="contact" className="contact">
       <div className="contact-column-1">
         <div className="profile-card">
           <p className="profile-name">Serge Regis TOUGOURI</p>
@@ -39,7 +39,10 @@ function Contact() {
                 <p>Online</p>
               </div>
             </div>
-            <a className="btn contact-btn" href="">
+            <a
+              className="btn contact-btn"
+              href="mailto:regisprofessionel@gmail.com"
+            >
               Contact me
             </a>
           </div>

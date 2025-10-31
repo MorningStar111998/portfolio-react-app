@@ -1,7 +1,19 @@
 import "./Projects.css";
 import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import oxygonImg from "./../../assets/projects-images/oxygon.png";
+
+const projectImagesModules = import.meta.glob(
+  "./../../assets/projects-images/*.{png,jpg}",
+  { eager: true }
+);
+
+const projectImages = Object.keys(projectImagesModules).reduce((acc, path) => {
+  const filename = path.match(/([^/]+)\.(png|jpg)$/i)[1];
+
+  acc[filename] = projectImagesModules[path].default;
+
+  return acc;
+}, {});
 
 const itemVariants = {
   hidden: { opacity: 0, scale: 0, y: 6 },
@@ -21,36 +33,102 @@ const itemVariants = {
 
 const projects = [
   {
-    title: "Portfolio Website",
+    key: "portfolio", // New key
+    title: "React Portfolio Website",
     category: "Web Design",
-    year: 2024,
+    year: 2025,
     description:
       "A modern, responsive personal portfolio showcasing professional skills and projects.",
+    link: "coming-soon",
     stack: ["React", "Tailwind CSS", "Vite"],
   },
   {
+    key: "crm", // New key
     title: "CRM System",
     category: "Full-Stack",
     year: 2023,
     description:
       "Built a custom Customer Relationship Management system for internal team use.",
-    stack: ["Node.js (Express)", "MongoDB", "Vue.js"],
+    link: "coming-soon",
+
+    stack: ["Laravel", "MySQL", "EJS (JavaScript)"],
   },
   {
-    title: "Company Landing Page",
+    key: "zakcollection", // New key
+    title: "Zak Collection E-commerce",
+    category: "CMS",
+    year: 2023,
+    description:
+      "E-commerce setup using WordPress for a small Moroccan slippers retail client, including payment integration.",
+    link: "https://www.zakcollectioncop.com/",
+
+    stack: ["WordPress", "WooCommerce", "PHP"],
+  },
+  {
+    key: "zaktalal",
+    title: "ZakTalal Landing Page",
+    category: "CMS",
+    year: 2023,
+    description:
+      "High-conversion landing page designed to support marketing efforts for the Zak Collection brand.",
+    link: "https://www.zaktalal.com/",
+
+    stack: ["WordPress", "Elementor", "HTML/CSS"],
+  },
+  {
+    key: "webcinq",
+    title: "WebCinq Agency Website",
     category: "CMS",
     year: 2022,
     description:
-      "Designed and developed a high-conversion landing page for a new product launch.",
-    stack: ["Webflow", "HTML", "CSS"],
+      "Development of the official website for the Web Development Company, focused on showcasing services and portfolio.",
+    link: "http://webcinq.ma/",
+
+    stack: ["WordPress", "Bootstrap", "Custom PHP"],
   },
   {
-    title: "WordPress Store",
+    key: "arih",
+    title: "ARIH (Casablanca Hotel Industry Association)",
+    category: "CMS",
+    year: 2022,
+    description:
+      "Official website for the Regional Association of the Hotel Industry in Casablanca, serving members and providing resources.",
+    link: "https://www.arihcs.ma/",
+
+    stack: ["WordPress", "Custom Theme", "PHP"],
+  },
+  {
+    key: "magmanagement",
+    title: "Mag Management Consulting",
     category: "CMS",
     year: 2021,
     description:
-      "E-commerce setup using WordPress for a small retail client, including payment integration.",
-    stack: ["WordPress", "WooCommerce", "PHP"],
+      "Business website for a consulting company based in Marrakech, detailing services and contact information.",
+    link: "https://magmanagementgroupe.com/",
+
+    stack: ["WordPress", "Elementor", "CSS"],
+  },
+  {
+    key: "islahtravaux",
+    title: "Islah Travaux (Construction Company)",
+    category: "CMS",
+    year: 2021,
+    description:
+      "Website showcasing the services and past projects of a construction and public works company.",
+    link: "https://www.islahtravaux.ma/",
+
+    stack: ["WordPress", "Elementor", "Custom JS"],
+  },
+  {
+    key: "oxygon",
+    title: "Oxygon Gas Company",
+    category: "CMS",
+    year: 2021,
+    description:
+      "Corporate website for a gas company providing installations and maintenance services for medical facilities and hospitals.",
+    link: "https://oxygon.ma/",
+
+    stack: ["WordPress", "Custom Theme", "PHP"],
   },
 ];
 
@@ -76,7 +154,7 @@ function Projects() {
   }, [activeCategory]);
 
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <div className="row-1">
         <div className="column-1">
           <h2>My Work</h2>
@@ -96,6 +174,7 @@ function Projects() {
       </div>
       <div className="row-2 projects-container">
         <div className="tabs">
+          <span>Filter By :</span>
           {categories.map((category) => (
             <button
               key={category}
@@ -104,8 +183,7 @@ function Projects() {
                 setCategory(category);
               }}
             >
-              //
-              <span className="project-count">{counts[category]}</span>{" "}
+              /<span className="project-count">{counts[category]}</span>{" "}
               {category}{" "}
             </button>
           ))}
@@ -124,8 +202,16 @@ function Projects() {
                 exit="exit"
                 transition={{ delay: i * 0.06 }}
               >
-                <div className="project-img">
-                  <img src={oxygonImg} alt={project.title} />
+                <div className="view-project">
+                  <button>
+                    <a target="_blank" href={project.link}>View Project</a>
+                  </button>
+                </div>
+                <div className="project-im">
+                  <img
+                    src={projectImages[project.key] ?? projectImages["default"]}
+                    alt={project.title}
+                  />
                 </div>
                 <div className="project-details">
                   <p className="project-title"> {project.title}</p>

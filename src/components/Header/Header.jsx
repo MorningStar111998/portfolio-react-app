@@ -1,46 +1,52 @@
 import "./Header.css";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
+  const headerRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-
-    const header = document.querySelector("header");
+    const header = headerRef.current;
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      
+
       if (scrollY > window.innerHeight * 0.5) {
         header.classList.add("sticky");
       } else {
         header.classList.remove("sticky");
       }
-    }
-    window.addEventListener("scroll", handleScroll)
+    };
+    // , { passive: true } : I use this to make sure my scroll handler will not block scrolling
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []
-
-  );
+  }, []);
 
   return (
-    <header className="header">
+    <header id="header" ref={headerRef} className={`header ${menuOpen ? "nav-open" : ""}`}>
+      {/* Brand logo : Regis */}
       <div className="brand-logo">
         Regis Tougouri<span>.</span>
         <span>_</span>
       </div>
+      {/* Button menu for mobile */}
+
+      {/* Navbar */}
       <nav className="header-nav">
         <ul>
           <li className="header-nav-item">
             {" "}
-            <a href="#home">// Home</a>{" "}
+            <a href="#hero">// Home</a>{" "}
           </li>
           <li className="header-nav-item">
             {" "}
-            <a href="#project">// Project</a>{" "}
+            <a href="#projects">// Project</a>{" "}
           </li>
           <li className="header-nav-item">
             {" "}
-            <a href="#experience">// Experience</a>{" "}
+            <a  href="#experience">// Experience</a>{" "}
           </li>
           <li className="header-nav-item">
             {" "}
@@ -48,9 +54,21 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <div className="brand-logo hidden-element" >
+      <div className="hidden-element">
         Regis Tougouri<span>.</span>
         <span>_</span>
+      </div>
+      <div className="dropdown-button">
+        <button
+          aria-label="Toggle menu"
+          aria-controls="primary-nav"
+          aria-expended={menuOpen}
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+          }}
+        >
+          <FontAwesomeIcon icon={faBars} />
+        </button>
       </div>
     </header>
   );

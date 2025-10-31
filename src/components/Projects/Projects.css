@@ -1,59 +1,47 @@
-.projects{
-    display: flex;
-    flex-direction: column;
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 /* Row 1  */
-.projects .row-1{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.projects .row-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
-
-
-.projects .row-1 p{
-    max-width: 500px;
+.projects .row-1 p {
+  max-width: 500px;
 }
 
-.projects .row-1 .column-2{
-    text-align: center;
+.projects .row-1 .column-2 {
+  text-align: center;
 }
 
-/* 1. Set up a 3D context on the container */
 .phone-container {
-  /* This is crucial for 3D effect */
-  perspective: 1000px; 
+  perspective: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 2. Define the element's shape and appearance */
 .floating-phone {
-    background: url("./../../assets/background-phone.jpg");
-    background-size: cover;
+  background: url("./../../assets/background-phone.jpg");
+  background-size: cover;
   width: 300px;
   height: 500px;
-  background-color: #222; /* Dark phone body */
-  border: 10px solid #000; /* Screen border */
-  border-radius: 20px; /* Rounded corners */
+  background-color: #222;
+  border: 10px solid #000;
+  border-radius: 20px;
   position: relative;
   box-shadow: 0px 0px 10px white;
   /* Smooth transformation on hover */
-  transition: transform 0.8s ease-in-out; 
+  transition: transform 0.8s ease-in-out;
 
-  /* 4. Apply 3D Transformation - Initial State (Slight Tilt) */
-  /* Move it back a bit in Z space for a better view */
-  transform: rotate(10deg) rotateX(15deg) rotateY(-25deg) translateZ(0); 
-
+  transform: rotate(10deg) rotateX(15deg) rotateY(-25deg) translateZ(0);
 }
-
-/* 3. Create the 3D depth using box-shadow */
-
 
 /* Optional: Add hover for interaction */
 .floating-phone:hover {
@@ -61,75 +49,145 @@
 }
 
 
-/* Projects  */
-.projects .tabs{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-.projects .tab{
-    font-size: 1.1rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    position: relative;
-    background: none;
-    border: none;
+/* Row 2  */
+/* Projects  tabs*/
+.projects .tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.projects .tab:hover{
-    color: #1bd0dd;
+.projects .tabs > span {
+  font-size: 1.1rem;
+  padding: 0.5rem;
 }
-.projects .tab.active{
-    color: #1bd0dd;
-}
-
-
-.project-count{
-    position: absolute;
-    top: -0.2rem;
-    right: -0.2rem;
-    font-size: 0.8rem;
+.projects .tab {
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  border: none;
 }
 
-.projects-container .grid-container{
-    margin-top: 3em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    position: relative;
+.projects .tab:hover {
+  color: #1bd0dd;
+}
+.projects .tab.active {
+  color: #1bd0dd;
 }
 
-.project-item{
-    /* width: 200px;
+.project-count {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  font-size: 0.8rem;
+}
+
+/* Projects  grid*/
+
+.projects-container .grid-container {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+.project-item {
+  /* width: 200px;
     height: 200px; */
-    background-color: #2a292e;
-    color: white;
-    
-    text-align: center;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    cursor: pointer;
+  background-color: #2a292e;
+  color: white;
+
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
 }
 
-.project-item:hover img{
-    scale: 1.1;
+.project-item:hover img {
+  scale: 1.1;
+}
+
+.project-item .project-img {
+  width: 100%;
+  overflow: hidden;
+}
+.project-item img {
+  width: 100%;
+  transition: all 0.4s ease;
+  
+}
+
+.project-details {
+  padding: 1rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 
-.project-item .project-img{
-    width: 100%;
-    overflow: hidden;
-}
-.project-item img{
-    width: 100%;
-    transition: all 0.4s ease;
+/* View project button */
+.view-project{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.427);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+
+  visibility: hidden;
+  z-index: 1000;
 }
 
-.project-details{
-    padding: 1rem;
+.view-project button{
+  background: #1bd0dd;
+  color: white;
+  border-radius: 20px;
+  border: none;
 }
 
-.project-title{
-    font-size: 1.5rem;
-    font-weight: 700;
+.view-project button a{
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.4rem 1rem;
+
+
+}
+
+.project-item:hover .view-project{
+  visibility: visible;
+}
+
+
+
+/* Mobile */
+@media (max-width:768px) {
+.projects .row-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* .projects-container .grid-container {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  position: relative;
+} */
 }

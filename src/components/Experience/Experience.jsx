@@ -3,7 +3,7 @@ import Accordion from "./Accordion";
 
 function Experience() {
   return (
-    <section className="experience">
+    <section id="experience" className="experience">
       <h2>Professional Experience</h2>
       <div className="flex-container-row">
         
