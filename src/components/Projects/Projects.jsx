@@ -174,7 +174,7 @@ function Projects() {
       </div>
       <div className="row-2 projects-container">
         <div className="tabs">
-          <span>Filter By :</span>
+          <span style={{fontSize:"0.8rem"}}>Filter By :</span>
           {categories.map((category) => (
             <button
               key={category}

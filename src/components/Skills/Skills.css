@@ -1,66 +1,59 @@
-.skills{
-    display: flex;
-    flex-direction: column;
-    
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  border: none;
+  
 }
 
-
-
-.skills-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    flex-direction: row;
-    gap: 1.2rem;
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.2rem;
 }
 
-.skill-item{
-    border: solid 1px rgba(255, 254, 254, 0.662);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.skill-item {
+  border: solid 1px rgba(255, 254, 254, 0.662);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 
-    transition: all 0.2s ease;
-    cursor: default;
+  transition: all 0.2s ease;
+  cursor: default;
 }
 
-.skill-item:nth-child(4), /* Selects ONLY the 4th element */
-.skill-item:nth-child(5)  /* Selects ONLY the 5th element */
-{
+.skill-item:nth-child(4),
+.skill-item:nth-child(5) {
   transform: translateX(50%);
 }
 
-
-
-.skill-header{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 1rem;
+.skill-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
   margin-left: -1rem;
-
 }
 
-
-.skill-title{
+.skill-title {
   font-size: 1.6rem;
   font-weight: 900;
 }
 
-.skill-description{
+.skill-description {
   font-size: 1.2rem;
   font-weight: 600;
   border-left: solid rgba(203, 201, 201, 0.247) 3px;
-  padding-left:24px ;
+  padding-left: 24px;
   position: relative;
 }
 
-.skill-description::before{
+.skill-description::before {
   content: "<h3>";
   color: rgba(203, 201, 201, 0.247);
   font-size: 1rem;
@@ -70,7 +63,7 @@
   transform: translateX(-50%) translateY(-100%);
 }
 
-.skill-description::after{
+.skill-description::after {
   content: "</h3>";
   color: rgba(203, 201, 201, 0.247);
   font-size: 1rem;
@@ -87,18 +80,52 @@
   object-fit: contain;
 }
 
-
-
-@media (max-width:768px) {
-  .skills-container{
-    display: flex;
-    flex-direction: column;
+@media (max-width: 768px) {
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
     gap: 1.2rem;
+  }
+
+  .skill-item:nth-child(4),
+  .skill-item:nth-child(5) {
+    transform: translateX(0);
+  }
+
+
+.skill-title {
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
-.skill-item:nth-child(4), /* Selects ONLY the 4th element */
-.skill-item:nth-child(5)  /* Selects ONLY the 5th element */
-{
-  transform: translateX(0);
+.skill-description {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
+
+.skill-description::before {
+  font-size: 0.8rem;
+}
+
+.skill-description::after {
+  font-size: 0.8rem;
+}
+
+.skill-logo {
+  width: 30px;
+  height: 30px;
+}
+}
+
+/* Medium screen */
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .skill-item:nth-child(4) {
+    transform: translateX(0);
+  }
 }

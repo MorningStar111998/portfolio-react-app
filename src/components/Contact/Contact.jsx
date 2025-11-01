@@ -4,6 +4,7 @@ import githubIcon from "./../../assets/socials-icons/github.png";
 import instagramIcon from "./../../assets/socials-icons/instagram.png";
 import linkedinIcon from "./../../assets/socials-icons/linkedin.png";
 import whatsappIcon from "./../../assets/socials-icons/whatsapp.png";
+import { color } from "framer-motion";
 
 const socials = [
   { name: "whatsapp", link: "https://wa.me/212721677298", icon: whatsappIcon },
@@ -35,8 +36,10 @@ function Contact() {
             <div className="left">
               <div className="profile-pic-mini"></div>
               <div className="profile-status">
-                <p>@sergeregis</p>
-                <p>Online</p>
+                <p className="profile-status-name">@sergeregis</p>
+                <p className="profile-status-status" style={{ color: "#29a71a" }}>
+                  Online
+                </p>
               </div>
             </div>
             <a
@@ -49,7 +52,7 @@ function Contact() {
         </div>
       </div>
       <div className="contact-column-2">
-        <div>
+        <div className="contact-message">
           <h1>Have a project in mind? Let’s make it happen.</h1>
           <br />
           <p>Send me an email or contact me via instant message!</p>

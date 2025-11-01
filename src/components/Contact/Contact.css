@@ -1,13 +1,13 @@
-.contact{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0e0e0e;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+  background-color: #0e0e0e;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
-
 
 /* Profile Card  */
 .profile-card {
@@ -28,23 +28,23 @@
   overflow: hidden;
   position: relative;
   transition: all 0.2s ease;
-  animation: glowing 2s  infinite linear;
+  animation: glowing 2s infinite linear;
 }
 
-@keyframes spin {
+/* @keyframes spin {
   from { transform: rotateY(0deg); }
   to { transform: rotateY(360deg); }
-}
+} */
 
 @keyframes glowing {
-  0%, 100%{
+  0%,
+  100% {
     box-shadow: 0px 0px 0px #1bd0dd;
   }
-  50%{
+  50% {
     box-shadow: 0px 0px 40px #1bd0dd;
   }
 }
-
 
 .profile-name {
   font-size: 1.8rem;
@@ -107,74 +107,197 @@ a.contact-btn:hover {
   transform: translateY(-2px);
 }
 
-
-
 /* Contact  */
-.contact-column-2{
-    display: flex;
+.contact-column-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 4rem;
+}
+.contact h1 {
+  max-width: 600px;
+}
+
+a.contact-email {
+  text-decoration: none;
+  font-size: 1.5rem;
+  background: linear-gradient(rgba(0, 0, 0, 0) 5%, #1bd0dd);
+  background-size: 100% 20%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: white;
+  transition: background 0.1s ease;
+  padding: 0.2rem;
+}
+
+a.contact-email:hover {
+  background-size: 100% 100%;
+}
+
+.socials-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact .social-icon {
+  width: 42px;
+}
+
+/* Mobile  */
+
+@media (max-width: 767px) {
+  .contact {
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 4rem;
-}
-.contact h1{
-    max-width: 600px;
-}
-
-a.contact-email{
-    text-decoration: none;
-    font-size: 1.5rem;
-    background: linear-gradient( rgba(0, 0, 0, 0) 5%, #1bd0dd);
-    background-size: 100% 20%;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    color: white;
-    transition: background 0.1s ease;
-    padding: 0.2rem;
-}
-
-a.contact-email:hover{
-    background-size: 100% 100%;
-}
-
-.socials-container{
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    gap: 1rem;
-}
-
-
-.contact .social-icon{
-    width: 42px;
-}
-
-@media (max-width:768px){
-  .contact{
-    flex-direction: column;
-
     gap: 2rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
     padding-left: 3rem;
     padding-right: 3rem;
-}
-a.contact-email{
-  font-size: 1rem;
+  }
+
+  .profile-card {
+    height: 360px;
+    width: 240px;
+    min-width: 100px;
+  }
+
+  @keyframes glowing {
+    0%,
+    100% {
+      box-shadow: 0px 0px 0px #1bd0dd;
+    }
+    50% {
+      box-shadow: 0px 0px 20px #1bd0dd;
+    }
+  }
+
+  .profile-name {
+    font-size: 1rem;
+  }
+
+  .profile-title {
+    font-size: 0.8rem;
+  }
+
+  .profile-contact {
+    backdrop-filter: blur(40px);
+    height: 50px;
+    padding: 0.4rem;
+  }
+
+  .profile-contact .profile-pic-mini {
+    margin-left: 0;
+    height: 40px;
+    width: 40px;
+  }
+  .profile-status {
+    text-align: start;
+  }
+  .profile-status-name {
+    font-size: 0.6rem;
+  }
+  .profile-status-status {
+    font-size: 0.5rem;
+  }
+
+  a.contact-btn {
+    font-size: 0.6rem;
+    padding: 0.2rem;
+  }
+
+  a.contact-email {
+    font-size: 1rem;
+  }
+
+  .socials-container {
+    justify-content: center;
+  }
+
+  .contact-column-2 {
+
+    align-items: center;
+  }
+
+    .contact-message {
+    text-align: center;
+  }
+  .contact-message h1 {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+  .contact-message p {
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+  }
 }
 
+/* Tablet and medium screen */
 
-.socials-container{
-  justify-content: center;
-}
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .contact {
+    justify-content: center;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
 
-.contact-column-2{
+  .profile-card {
+    height: 450px;
+    width: 300px;
+    min-width: 300px;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .profile-contact {
+    backdrop-filter: blur(80px);
+    height: 64px;
+    padding: 0 0.4rem;
+  }
+
+  .profile-status {
+    text-align: start;
+  }
+
+  a.contact-btn {
+    padding: 0.4rem;
+  }
+
+  .contact-column-2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 4rem;
-}
+  }
+
+  .contact-message {
+    text-align: center;
+  }
+  .contact-message h1 {
+    font-size: 1.5rem;
+    padding: 2rem;
+  }
+  .contact-message p {
+    font-size: 0.9rem;
+    padding: 2rem auto;
+  }
+
+  a.contact-email {
+    font-size: 1.1rem;
+  }
+
+  .socials-container {
+    justify-content: center;
+  }
+
+  .contact .social-icon {
+    width: 40px;
+  }
 }
