@@ -1,7 +1,7 @@
 import "./Header.css";
 import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const headerRef = useRef(null);
@@ -67,7 +67,7 @@ function Header() {
             setMenuOpen(!menuOpen);
           }}
         >
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon className="menu-icon" icon={!menuOpen ? faBars : faX} />
         </button>
       </div>
     </header>

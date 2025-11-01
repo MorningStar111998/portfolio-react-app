@@ -103,6 +103,11 @@
     display: block;
   }
 
+  .menu-icon{
+    font-size: 1.1rem;
+    color: white;
+  }
+
   .dropdown-button button {
     border-radius: 50%;
     width: 40px;
@@ -110,6 +115,18 @@
     background: rgba(0, 0, 0, 0.507);
     backdrop-filter: blur(10px);
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .nav-open .menu-icon{
+    color: black;
+  }
+  .nav-open .dropdown-button button{
+    background: none;
+    
   }
   .header {
     transform: translateY(0);
@@ -133,7 +150,7 @@
     display: block;
     width: 80vw;
     height: 100vh;
-    padding-top: 1rem;
+    padding-top: 5rem;
     padding-left: 1rem;
     position: absolute;
     top: 0;
