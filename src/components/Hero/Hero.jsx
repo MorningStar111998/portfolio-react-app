@@ -3,12 +3,12 @@ import Clients from "./Clients";
 import Carousel from "./Carousel";
 
 const clientImagesModules = import.meta.glob(
-  "./../../assets/clients-logos/*.{png,jpg}",
+  "./../../assets/clients-logos/*.{png,jpg,webp}",
   { eager: true }
 );
 
 const clientImages = Object.keys(clientImagesModules).reduce((acc, path) => {
-  const filename = path.match(/([^/]+)\.(png|jpg)$/i)[1];
+  const filename = path.match(/([^/]+)\.(png|jpg,webp)$/i)[1];
 
   acc[filename] = clientImagesModules[path].default;
 

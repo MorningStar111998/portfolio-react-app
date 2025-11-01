@@ -3,12 +3,12 @@ import { useState, useMemo } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const projectImagesModules = import.meta.glob(
-  "./../../assets/projects-images/*.{png,jpg}",
+  "./../../assets/projects-images/*.{png,jpg,webp}",
   { eager: true }
 );
 
 const projectImages = Object.keys(projectImagesModules).reduce((acc, path) => {
-  const filename = path.match(/([^/]+)\.(png|jpg)$/i)[1];
+  const filename = path.match(/([^/]+)\.(png|jpg|webp)$/i)[1];
 
   acc[filename] = projectImagesModules[path].default;
 
