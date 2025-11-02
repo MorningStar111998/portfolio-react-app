@@ -38,6 +38,7 @@ const skills = [
   },
 ];
 
+
 function Skills() {
   return (
     <section className="skills">

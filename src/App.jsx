@@ -4,6 +4,7 @@ import Skills from "./components/Skills/Skills.jsx";
 import Projects from "./components/Projects/Projects.jsx";
 import Experience from "./components/Experience/Experience.jsx"
 import Contact from "./components/Contact/Contact.jsx";
+import ScrollButton from "./components/ScrollButton/ScrollButton.jsx";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Skills />
       <Projects/>
       <Experience/>
-      <Contact/>
+      <Contact />
+      <ScrollButton/>
     </>
   );
 }
