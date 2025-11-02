@@ -17,6 +17,8 @@
 .scroll-button.invisible {
   bottom: -60px;
   opacity: 0;
+  pointer-events: none;
+
 }
 
 

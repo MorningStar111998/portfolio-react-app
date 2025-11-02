@@ -1,21 +1,21 @@
 import "./Hero.css";
-import Clients from "./Clients";
-import Carousel from "./Carousel";
+// import Clients from "./Clients";
+// import Carousel from "./Carousel";
 
-const clientImagesModules = import.meta.glob(
-  "./../../assets/clients-logos/*.{png,jpg,webp}",
-  { eager: true }
-);
+// const clientImagesModules = import.meta.glob(
+//   "./../../assets/clients-logos/*.{png,jpg,webp}",
+//   { eager: true }
+// );
 
-const clientImages = Object.keys(clientImagesModules).reduce((acc, path) => {
-  const filename = path.match(/([^/]+)\.(png|jpg,webp)$/i)[1];
+// const clientImages = Object.keys(clientImagesModules).reduce((acc, path) => {
+//   const filename = path.match(/([^/]+)\.(png|jpg,webp)$/i)[1];
 
-  acc[filename] = clientImagesModules[path].default;
+//   acc[filename] = clientImagesModules[path].default;
 
-  return acc;
-}, {});
+//   return acc;
+// }, {});
 
-const imageSrc = Object.values(clientImages);
+// const imageSrc = Object.values(clientImages);
 
 
 function Hero() {
@@ -25,9 +25,8 @@ function Hero() {
         <div className="floating-globe"></div>
         <h1>Regis Tougouri</h1>
         <h2>Full Stack Developer</h2>
-        <div className="hero-clients">
-          <p>My Clients</p>
-          <Carousel images={imageSrc} autoPlay={true} interval={3500} />
+        <div className="hero-cta">
+          <a href="#contact" className="cta-btn">Contact Me</a>
         </div>
         <img src="" alt="" />
       </div>
