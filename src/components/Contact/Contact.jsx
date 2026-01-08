@@ -4,7 +4,6 @@ import githubIcon from "./../../assets/socials-icons/github.png";
 import instagramIcon from "./../../assets/socials-icons/instagram.png";
 import linkedinIcon from "./../../assets/socials-icons/linkedin.png";
 import whatsappIcon from "./../../assets/socials-icons/whatsapp.png";
-import { color } from "framer-motion";
 
 const socials = [
   { name: "whatsapp", link: "https://wa.me/212721677298", icon: whatsappIcon },

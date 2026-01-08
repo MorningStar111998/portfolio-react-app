@@ -4,7 +4,7 @@ import { useState } from "react";
 import airlodLogo from "./../../assets/company-logos/airlod.png";
 import webcinqLogo from "./../../assets/company-logos/webcinq.png";
 import outlierLogo from "./../../assets/company-logos/outlier-ai.png";
-import afrocodeverseLogo from "./../../assets/company-logos/afrocodeverse.png";
+import altisLogo from "./../../assets/company-logos/altis.jpg";
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,12 +46,12 @@ const experiences = [
     companyWebsite: "outlier.ai",
   },
   {
-    name: "AfroCodeVerse",
+    name: "Altis",
     role: "Freelancer Full Stack Developer",
     period: "2025 - Present",
-    logo: afrocodeverseLogo,
+    logo: altisLogo,
     description:
-      "Freelancing under AfroCodeVerse as a self-employed, I develop custom websites and web apps tailored to clients’ needs, focusing on functionality and modern design.",
+      "Freelancing under Altis as a self-employed, I develop custom websites and web apps tailored to clients’ needs, focusing on functionality and modern design.",
     skills: ["React", "Laravel", "PHP", "Python", "WordPress"],
     location: "Marrakech, Morocco",
     companyWebsite: "",
