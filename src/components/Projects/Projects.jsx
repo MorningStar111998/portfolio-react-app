@@ -49,7 +49,7 @@ const projects = [
     year: 2023,
     description:
       "Built a custom Customer Relationship Management system for internal team use.",
-    link: "coming-soon",
+    link: "https://github.com/MorningStar111998/crm-system",
 
     stack: ["Laravel", "MySQL", "EJS (JavaScript)"],
   },

@@ -4,8 +4,7 @@ import { useState } from "react";
 import airlodLogo from "./../../assets/company-logos/airlod.png";
 import webcinqLogo from "./../../assets/company-logos/webcinq.png";
 import outlierLogo from "./../../assets/company-logos/outlier-ai.png";
-import altisLogo from "./../../assets/company-logos/altis.jpg";
-
+import altisLogo from "./../../assets/company-logos/altis.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";

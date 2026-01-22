@@ -107,11 +107,17 @@
 }
 
 /* Companies Logos  */
-.accordion-description img.webcinq,
-.accordion-description img.outlier {
+/* .accordion-description img.outlier,  */
+.accordion-description img.webcinq
+{
   background-color: white;
   border-radius: 50%;
 }
+
+/* .accordion-description img.Altis{
+  background-color: black;
+  border-radius: 50%;
+} */
 
 /* Job Skills  */
 
